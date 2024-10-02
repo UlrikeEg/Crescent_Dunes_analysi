@@ -29,8 +29,8 @@ months  =  np.arange(1,13)
 days    =  np.arange(1,32)   
 
 years   =  [2024] #
-months  =  [3,4] # 
-days    =  np.arange(1,32)  # [16] # 
+months  =  [9] # 
+days    =  np.arange(16,30)  # [14,15,16,17] # 
 
 start_processing = pd.to_datetime('2024-03-12 00:00:00')
 #start_processing = pd.to_datetime('2024-04-14 00:00:00')
@@ -40,9 +40,9 @@ fs = 20 # [Hz], sampling frequency
 
 inflow_path = 'Y:\Wind-data/Restricted/Projects/NSO/CrescentDunes_Met_Inflow_Sonics/'
 inflow_slow_path = 'Y:\Wind-data/Restricted/Projects/NSO/CrescentDunes_Met_Inflow_Low_Speed_Data/'
-mast1_path = 'Y:\Wind-data/Restricted/Projects/NSO/xxx/'
+mast1_path = 'Y:\Wind-data/Restricted/Projects/NSO/CrescentDunes_Met_1_Sonics/'
 mast2_path = 'Y:\Wind-data/Restricted/Projects/NSO/xxx/'
-mast3_path = 'Y:\Wind-data/Restricted/Projects/NSO/xxx/'
+mast3_path = 'Y:\Wind-data/Restricted/Projects/NSO/CrescentDunes_Met_3_Sonics/'
 
 path_save = './CD_processed_data_preliminary/' # 'Y:\Wind-data/Restricted/Projects/NSO/CrescentDunes_processed_met_tower_data_preliminary/'  # 
             
@@ -52,7 +52,7 @@ path_save = './CD_processed_data_preliminary/' # 'Y:\Wind-data/Restricted/Projec
 
 debug = 0
 save  = 1
-plot  = 0
+plot  = 1
 
 
 
@@ -86,26 +86,25 @@ for year in years:
             inflow_files = (sorted(glob.glob(inflow_path +
                                              'CD_Inflow_Sonics_' + year + '_' + month + '_' + day + '_' + '*.dat'))  ) 
             
-            # try:
-            #     if pd.to_datetime(year+ month+ day) == pd.to_datetime('2024-03-16 00:00:00'):
-            #         inflow_files = ['Y:\\Wind-data/Restricted/Projects/NSO/CrescentDunes_Met_Inflow_Sonics\\CD_Inflow_Sonics_2024_03_15_0548.dat'] + inflow_files   # this file contains data for several hours, including March 16th
-            # except:
-            #     pass
-            
-            
+           
             # Add all files on the day to a single Dataframe
             inflow = pd.DataFrame()
             for datafile in inflow_files:
                 inflow = pd.concat( [inflow, read_sonic(datafile)]) 
             inflow = inflow.drop_duplicates().sort_index()
         
-            ### Read inflow mast slow files     
         
-            # inflow_slow_files = ( sorted(glob.glob(inflow_slow_path +
-            #                                        'Inflow_Met_Mast_LowSpeedData_' + year + '_' + month + '_' + day + '_' + '*.dat')) )
+        
+            ### Read inflow mast slow files     
+            
+            if pd.to_datetime(year+ month+ day) <= pd.to_datetime('2024-04-30 00:00:00'):
+                slow_file_string = 'TOA5_21544.LowSpeedData_'
+            else:
+                slow_file_string = 'Inflow_Met_Mast_LowSpeedData_'
+
             
             inflow_slow_files = ( sorted(glob.glob(inflow_slow_path +
-                                                   'TOA5_21544.LowSpeedData_' + year + '_' + month + '_' + day + '_' + '*.dat')) )
+                                                   slow_file_string + year + '_' + month + '_' + day + '_' + '*.dat')) )
             
             # Check if DataFrame spans more than a day and if yes append slow inflow files
             if len(inflow)!=0:
@@ -114,8 +113,7 @@ for year in years:
                         day_after = pd.to_datetime(year + month + day).date()+ pd.to_timedelta(i,"D")
                         inflow_slow_files = inflow_slow_files+(
                                              sorted(glob.glob(inflow_slow_path +
-                                                              #'Inflow_Met_Mast_LowSpeedData_' 
-                                                              'TOA5_21544.LowSpeedData_'
+                                                              slow_file_string
                                                               + day_after.strftime('%Y') + '_' + day_after.strftime('%m') + '_' + 
                                                               day_after.strftime('%d') + '_' + '*.dat'))   )
                 
@@ -139,7 +137,7 @@ for year in years:
 
             
             # mast1
-            mast1_files = sorted(glob.glob(mast1_path +'Met_Mast_1_Sonics_' + year + '_' + month + '_' + day + '_' + '*.dat'))   #
+            mast1_files = sorted(glob.glob(mast1_path +'CD_Met_Mast_1_Sonics_' + year + '_' + month + '_' + day + '_' + '*.dat'))   #
             
             mast1 = pd.DataFrame()
             for datafile in mast1_files:
@@ -147,7 +145,7 @@ for year in years:
             mast1 = mast1.drop_duplicates().sort_index()
             
             # mast2
-            mast2_files = sorted(glob.glob(mast2_path +'Met_Mast_2_Sonics_' + year + '_' + month + '_' + day + '_' + '*.dat'))   #
+            mast2_files = sorted(glob.glob(mast2_path +'CD_Met_Mast_2_Sonics_' + year + '_' + month + '_' + day + '_' + '*.dat'))   #
             
             mast2 = pd.DataFrame()
             for datafile in mast2_files:
@@ -155,7 +153,7 @@ for year in years:
             mast2 = mast2.drop_duplicates().sort_index()
                         
             # mast3
-            mast3_files = sorted(glob.glob(mast3_path +'Met_Mast_3_Sonics_' + year + '_' + month + '_' + day + '_' + '*.dat'))   #
+            mast3_files = sorted(glob.glob(mast3_path +'CD_Met_Mast_3_Sonics_' + year + '_' + month + '_' + day + '_' + '*.dat'))   #
             
             mast3 = pd.DataFrame()
             for datafile in mast3_files:
@@ -221,7 +219,7 @@ for year in years:
                             pd.to_datetime(year+ month+ day + " 00:00:00") + pd.Timedelta(1,"d")]
             
                 
-            #     ### Temperature calibration and Ri calculation
+            #     ### Temperature calibration and Ri calculation - dis not work well for NSO, might need to test for Crescent Dunes.
             #     if {'U_ax_3m','U_ax_7m'}.issubset(inflow.columns):
             #         # Ri_b calculation with 7m and 3m temperature sensors
             #         if 'Temp_7m' in inflow:    #  (only for data after Nov 2022 when 7m Temperature sensor was installed)  if inflow.index[0] > pd.to_datetime('2022-11-17 00:00:00'): 
@@ -278,8 +276,9 @@ for year in years:
 
             fs = 20 # [Hz], sampling frequency
 
-            window_fluxes = 60*20   # window for flux calc, in s
-
+            
+            flux_window = 20 # minutes
+            window_fluxes = flux_window*60   # window for flux calc, in s
 
             # Initialize DataFrame for length scales (inflow)
             fluxes_inflow = pd.DataFrame()
@@ -293,19 +292,24 @@ for year in years:
 
 
             # loop over 20 min segments
-            for time, period in inflow.groupby( (window_fluxes/10.) * (inflow.time/(window_fluxes/10.)).round(-1)): # in window_fluxes
-
+            #for time, period in inflow.groupby( (window_fluxes/10.) * (inflow.time/(window_fluxes/10.)).round(-1)): # in window_fluxes
+        
+            for time, period in inflow.groupby(pd.Grouper(freq=str(flux_window)+'T')):
+                center_time = time + pd.Timedelta(minutes=flux_window/2)  # Add 10 minutes to get the center time
+                
+              
                 maxlegs = int(window_fluxes*fs/2) # maximum lag for autocorrelation function     
                 rho_Mast = rho(period.p, period.RH, period.Temp).mean()
 
                 if len(period) > window_fluxes*fs/2: 
                     
                     # create new line with time stamp
-                    fluxes_inflow = pd.concat([fluxes_inflow, pd.DataFrame({    
-                         },
-                        index = [ period.index[int(len(period)/2)]] )  ]) 
+                    fluxes_inflow = pd.concat([fluxes_inflow, 
+                                               pd.DataFrame({},index = [center_time]  )    
+                                                   ])
+                         #[ period.index[int(len(period)/2)]] )   
                     
-                    # 7m height for inflow characteristics
+                    # Top height for inflow characteristics
                     fluxes_inflow['H_S'].iloc[-1] = HS(wE = period.W_ax_Top, theta = period.Ts_Top, Rho  =  rho_Mast) 
                     fluxes_inflow['Tau'].iloc[-1] = tau(period.W_ax_Top, period.wspd_Top, rho_Mast)  
                     fluxes_inflow['R_f'].iloc[-1] = Ri_flux( (period.Temp+period.Temp_11m)/2, period.Ts_Top, period.Ts_Low, 
@@ -313,73 +317,84 @@ for year in years:
                                                     period.W_ax_Top, 11-2.75 ) 
                     fluxes_inflow['zL'].iloc[-1] , fluxes_inflow['L'].iloc[-1]   = Obukhov_stability(Tref = period.Temp_11m, Tv= period.Ts_Top, 
                                                                       U = period.U_ax_Top, V = period.V_ax_Top, W = period.W_ax_Top, z=11)
+                    
+                    
+                    """ Autocorrelation for length scales is missing - do analog to NSO scripts. """
+            
+            
+            """ Include 3s gust correspoinding to ASCE7 (not been done in NSO data) """
+            
+            
 
-            # remove repeated values
+            # remove repeated values - this is mostly data artifacts in flux calculation.
             for column in fluxes_inflow.drop(fluxes_inflow.columns,axis=1).columns: 
                 #fluxes_inflow.loc[fluxes_inflow.duplicated([column]), column]=np.nan   # this drops all duplicates even if they occurr not consequtively
                 index=fluxes_inflow[column].diff()== 0
                 fluxes_inflow[column].loc[index]=np.nan
                 
-                
+            # merge with the actual inflow file
             inflow = inflow.merge(fluxes_inflow, left_index = True, right_index = True, how="outer")
                       
 
 
 
-            # ### combine all wake masts
-            masts = pd.merge(mast1.add_prefix('m1_'), mast2.add_prefix('m2_'), how='inner', left_index = True, right_index=True)    
-            masts = pd.merge(masts, mast3.add_prefix('m3_'), how='inner', left_index = True, right_index=True)    
+            ### combine all wake masts
+            masts = pd.merge(mast1.add_prefix('m1_'), mast2.add_prefix('m2_'), how='outer', left_index = True, right_index=True)    
+            masts = pd.merge(masts, mast3.add_prefix('m3_'), how='outer', left_index = True, right_index=True)    
             masts.index.name = 'UTC'
                 
-            # if len(masts) !=0:
+            if len(masts) !=0:
                 
-            #     ## Mast2 and 3 have specific faulty values
-            #     for height_col in [col for col in masts.columns if 'U_ax_' in col]:    # loop over every mast height
-            #         masts.loc[masts[height_col] == 3] = np.nan  
-            #     for height_col in [col for col in masts.columns if 'V_ax_' in col]:    # loop over every mast height
-            #         masts.loc[masts[height_col] == 33] = np.nan         
+                # ## Mast2 and 3 have specific faulty values - was the case at NSO, but seems like not at Crescent Dunes.
+                # for height_col in [col for col in masts.columns if 'U_ax_' in col]:    # loop over every mast height
+                #     masts.loc[masts[height_col] == 3] = np.nan  
+                # for height_col in [col for col in masts.columns if 'V_ax_' in col]:    # loop over every mast height
+                #     masts.loc[masts[height_col] == 33] = np.nan         
                     
                 
-            #     ## filter outliers (remove data that exceeds 5*std_dev in a 60s window)
-            #     for channel in masts.columns:
-            #         masts[channel] = masts[channel].where( np.abs(masts[channel] - masts[channel].rolling(filter_window, center=True, min_periods=1).median() ) 
-            #                                               <= (5* masts[channel].rolling(filter_window, center=True, min_periods=1).std() ) , np.nan)   
+                ## filter outliers (remove data that exceeds 5*std_dev in a 60s window)
+                for channel in masts.select_dtypes(include=[np.number]).columns:
+                    masts[channel] = masts[channel].where( np.abs(masts[channel] - masts[channel].rolling(filter_window, center=True, min_periods=1).median() ) 
+                                                          <= (5* masts[channel].rolling(filter_window, center=True, min_periods=1).std() ) , np.nan)   
 
                
-            #     if debug == 1:                   
+                if debug == 1:                   
                     
-            #         plt.figure(figsize=(17,10))
-            #         for height_col in [col for col in masts.columns if 'U_ax_' in col]:    # loop over every mast height
-            #             plt.plot(masts[height_col], label = height_col)
-            #         for height_col in [col for col in masts.columns if 'V_ax_' in col]:    # loop over every mast height
-            #             plt.plot(masts[height_col], label = height_col)
-            #         for height_col in [col for col in masts.columns if 'W_ax_' in col]:    # loop over every mast height
-            #             plt.plot(masts[height_col], label = height_col)
-            #         plt.grid(True)
-            #         plt.legend(loc=1)     
+                    plt.figure(figsize=(17,10))
+                    for height_col in [col for col in masts.columns if 'U_ax_' in col]:    # loop over every mast height
+                        plt.plot(masts[height_col], label = height_col)
+                    for height_col in [col for col in masts.columns if 'V_ax_' in col]:    # loop over every mast height
+                        plt.plot(masts[height_col], label = height_col)
+                    for height_col in [col for col in masts.columns if 'W_ax_' in col]:    # loop over every mast height
+                        plt.plot(masts[height_col], label = height_col)
+                    plt.grid(True)
+                    plt.legend(loc=1)     
                   
                         
-            #     ## wind speed and direction
-            #     masts = calc_wind(masts)
+                ## wind speed and direction
+                masts = calc_wind(masts)
                         
 
-            #     # Calculate TKE in a defined rolling window for the wake masts
-            #     for height_col in [col for col in masts.columns if 'U_ax_' in col]:    # loop over every mast height
+                # Calculate TKE in a defined rolling window for the wake masts
+                for height_col in [col for col in masts.columns if 'U_ax_' in col]:    # loop over every mast height
                 
-            #         U = height_col
-            #         V = height_col.replace("U_ax", "V_ax")
-            #         W = height_col.replace("U_ax", "W_ax")
-            #         TKE = height_col.replace("U_ax", "TKE")
-            #         TI = height_col.replace("U_ax", "TI")
-            #         TI_w = height_col.replace("U_ax", "TI_w")
+                    U = height_col
+                    V = height_col.replace("U_ax", "V_ax")
+                    W = height_col.replace("U_ax", "W_ax")
+                    TKE = height_col.replace("U_ax", "TKE")
+                    TI_U = height_col.replace("U_ax", "TI")
+                    TI_w = height_col.replace("U_ax", "TI_w")
+                    # TI_uE = height_col.replace("U_ax", "TI_uE")    # see if thsi makes sense at CD, or if we should inclue an along-wind + cross-wind component
+                    # TI_vN = height_col.replace("U_ax", "TI_vN")
 
-            #         # calculate TKE and TI     
-            #         masts[TKE] = tke_window(masts[U] ,masts[V] ,masts[W], fs=20, window=window_TKE)
-            #         masts[TI] =  TI_window((masts[U]**2 + masts[V]**2)**0.5, (masts[U]**2 + masts[V]**2)**0.5, fs=20, window=window_TKE)  
-            #         masts[TI_w] =  TI_window(masts[W], (masts[U]**2 + masts[V]**2)**0.5, fs=20, window=window_TKE)      
+                    # calculate TKE and TI     
+                    masts[TKE] = tke_time_window(masts[U] ,masts[V] ,masts[W], time_window=window_TKE)
+                    masts[TI_U] =  TI_time_window((masts[U]**2 + masts[V]**2)**0.5, (masts[U]**2 + masts[V]**2)**0.5, time_window=window_TKE)  
+                    masts[TI_w] =  TI_time_window(masts[W], (masts[U]**2 + masts[V]**2)**0.5, time_window=window_TKE)  
+                    # masts[TI_uE] =  TI_time_window(masts[V],(masts[U]**2 + masts[V]**2)**0.5, time_window=window_TKE)
+                    # masts[TI_vN] =  TI_time_window(masts[U],(masts[U]**2 + masts[V]**2)**0.5, time_window=window_TKE)   
 
-
- 
+                    
             
 
 
@@ -389,6 +404,10 @@ for year in years:
             inflow_cut = inflow
             if len(inflow) !=0:  
                 inflow_1min_cut = resample_sonic(inflow, res_freq)  
+            
+            masts_cut = masts
+            if len(masts) !=0:  
+                masts_1min_cut = resample_sonic(masts, res_freq)  
 
 
             # # Split DataFrame into daily chunks
@@ -427,149 +446,157 @@ for year in years:
             #     else:
             #         masts_1min_cut = pd.DataFrame()
 
-            #     # # Count number of nans for each wind component and in each 1 minute time step
-            #     # inflow_nans = inflow_1min_cut.filter(regex='_ax_').isna().resample(res_freq).mean().add_suffix("_nans")
-            #     # if len(masts) !=0:  
-            #     #     masts_nans = masts_1min_cut.filter(regex='_ax_').isna().resample(res_freq).mean().add_suffix("_nans")
-                
+               
+            
+            ## Count number of nans
+            
+            columns = list(inflow.filter(regex='_ax_').columns) + list(masts.filter(regex='_ax_').columns)
+            
+            hours = pd.date_range(start=pd.Timestamp(year=int(year), month=int(month), day=int(day)), 
+                                  end=pd.Timestamp(year=int(year), month=int(month), day=int(day)) 
+                                  + pd.Timedelta(hours=24), freq='H')
             
             
+            nans = pd.DataFrame(columns = columns, index = hours) 
             
-                ### Plot data            
-                if plot == 1:
-                    
-                    
-                    metar =     pd.read_csv('Tonopah_METAR.csv',
-                                        index_col = 1,
-                                        header = 0,    
-                                        #skiprows = [0], 
-                                        engine = 'c',
-                                        on_bad_lines='warn', 
-                                        parse_dates=True
-                                            )   
-                    
-                    met = metar[inflow.index[0] :inflow.index[-1]  ]
-                
-                    # Timeseries
-                    fig = plt.figure(figsize=(15,9))
-                    fig.subplots_adjust(right=0.9)
-                    plt.suptitle("{}".format(inflow_cut.index[0].date()))
-                    ax1 = plt.subplot(3, 1, 2)
-                    ax1.set_ylabel('Wind dir ($^\circ$)')
-                    for height_col in [col for col in inflow_1min_cut.columns if ('wdir' in col)  & ('_m' not in col) & ('_s' not in col)]:    # loop over every inflow_1min_cut mast height   
-                        ax1.plot(inflow_1min_cut[height_col],'.', label = height_col)
-                    # for height_col in [col for col in masts_1min_cut.columns if ('wdir' in col)  & ('_m' not in col) & ('_s' not in col)]:    # loop over every wake mast height   
-                    #     ax1.plot(masts_1min_cut[height_col],'.', label = height_col)
-                    plt.plot(met.drct,"o", ms=3, color='black', label = "METAR") 
-                    plt.legend(loc=1)
-                    plt.grid()
-                    
-                    ax2 = plt.subplot(3, 1, 1, sharex=ax1)
-                    plt.ylabel('Wind speed (m s$^{-1}$)')
-                    plt.plot(inflow_1min_cut.WS_15m,'.', label = '15m', color="grey")                   
-                    for height_col in [col for col in inflow_1min_cut.columns if ('wspd' in col)  & ('_m' not in col) & ('_s' not in col)]:    # loop over every mast height   
-                        ax2.plot(inflow_1min_cut[height_col],'.', label = height_col)
-                    # for height_col in [col for col in masts_1min_cut.columns if ('wspd' in col)  & ('_m' not in col) & ('_s' not in col)]:    # loop over every wake mast height   
-                    #     ax2.plot(masts_1min_cut[height_col],'.', label = height_col)
-                    plt.plot(met.sknt/1.94384,"o", ms=3, color='black', label = "METAR")  
-                    plt.legend(loc=1)
-                    plt.grid()
-                    
-                    ax3 = plt.subplot(3, 1, 3, sharex=ax1)
-                    plt.ylabel('Temp ($^\circ$)', color="C0")
-                    plt.plot(inflow_1min_cut.Temp,".",label = 'Temp 2m', color="C0") 
-                    try:
-                        plt.plot(inflow_1min_cut.Temp_11m,'.',label = 'Temp 11m', color="lightblue")
-                    except:
-                        pass
-                    plt.plot((met.tmpf-32)/1.8000,"o", ms=3, color='black', label = "") 
-                    ax3.legend(loc=1).set_zorder(100)
-                    ax4 = ax3.twinx()    
-                    plt.plot(inflow_1min_cut.RH,'.',label = 'RH', color="C1") 
-                    plt.plot(met.relh,"o", ms=5, color='black', label = "METAR") 
-                    plt.ylabel('RH (%)', color="C1")  
-                    ax5 = ax3.twinx()
-                    ax5.spines.right.set_position(("axes", 1.05))
-                    plt.plot(inflow_1min_cut.p,'.', label = 'p', color="C2")  
-                    # plt.plot(met.mslp,"o", ms=3, color='black', label = "") # sea level pressure, not actual pressure
-                    plt.ylabel('p (hPa)', color="C2")
-                    plt.grid()    
-                    
-                    plt.tight_layout()
-                
         
-                    # # Histogram
-                    # fig2 = plt.figure(figsize=(15,8))
-                    # plt.suptitle("Histograms {} to {}".format(inflow_cut.index[0].date(), inflow_cut.index[-1].date() ))
-                    # ax1 = plt.subplot(2, 1, 1)
-                    # #ax1.set_title("Wind direction histogram {} to {}".format(inflow_cut.index[0].date(), inflow_cut.index[-1].date() ))
-                    # for height_col in [col for col in inflow_cut.columns if 'wdir_' in col]:    # loop over every mast height   
-                    #     plt.hist(inflow_cut[height_col].dropna(),label = height_col, alpha=0.5, bins=180, density=True) 
-                    # for height_col in [col for col in masts_cut.columns if 'wdir_' in col]:    # loop over every mast height   
-                    #     plt.hist(masts_cut[height_col].dropna(),label = height_col, alpha=0.5, bins=180, density=True) 
-                    # plt.legend()
-                    # plt.grid()
-                    # plt.xlabel('Wind dir ($^\circ$)')
-                        
-                    # ax2 = plt.subplot(2, 1, 2)
-                    # #ax2.set_title("Wind speed histogram {} to {}".format(inflow_cut.index[0].date(), inflow_cut.index[-1].date() ))
-                    # for height_col in [col for col in inflow_cut.columns if 'wspd_' in col]:    # loop over every mast height   
-                    #     plt.hist(inflow_cut[height_col].dropna(),label = height_col, alpha=0.5, bins=100, density=True) 
-                    # for height_col in [col for col in masts_cut.columns if 'wspd_' in col]:    # loop over every mast height   
-                    #     plt.hist(masts_cut[height_col].dropna(),label = height_col, alpha=0.5, bins=100, density=True) 
-                    # plt.legend()
-                    # plt.grid()
-                    # plt.xlabel('Wind speed (m s$^{-1}$)')
-                    # plt.tight_layout()
-                    
-                    
-                    # # of nans
-                    # fig3 = plt.figure(figsize=(15,8))
-                    # plt.plot(inflow_nans.filter(regex='ax').mean(axis=1)
-                    #          *100,
-                    #          label = 'inflow')
-                    # if len(masts_cut) !=0:
-                    #     plt.plot(masts_nans.filter(regex='m1').mean(axis=1) 
-                    #              *100, 
-                    #              label = 'mast 1')
-                    #     plt.plot(masts_nans.filter(regex='m2').mean(axis=1)
-                    #              *100, 
-                    #              label = 'mast 2')
-                    #     plt.plot(masts_nans.filter(regex='m3').mean(axis=1)
-                    #              *100, 
-                    #              label = 'mast 3')
-                    # plt.ylabel('% of NaNs in 10 min periods')
-                    # plt.legend()                
-                    # plt.tight_layout()
-                        
-    
-    
-                ### Save data files a pickle for faster reading
-                if save == 1:
-                    
-                    print ("Saving data ...")  
-    
-                    if plot == 1:
-                        fig.savefig(path_save+'Overview_{}_{:0>2}h_to_{}_{:0>2}h.png'.format(inflow_cut.index[0].date(),inflow_cut.index[0].hour , inflow_cut.index[-1].date(), inflow_cut.index[-1].hour), dpi=200) 
-                        #fig2.savefig(path_save+'Histogram_{}_{}h_to_{}_{}h.png'.format(inflow_cut.index[0].date(),inflow_cut.index[0].hour , inflow_cut.index[-1].date(), inflow_cut.index[-1].hour), dpi=200) 
-                        #fig3.savefig(path_save+'NaNs_{}_{}h_to_{}_{}h.png'.format(inflow_cut.index[0].date(),inflow_cut.index[0].hour , inflow_cut.index[-1].date(), inflow_cut.index[-1].hour), dpi=200)
-                        plt.close('all')
-                    
-                    if len(inflow_cut) !=0:  
-                        inflow_1min_cut.to_pickle(path_save+'Inflow_Mast_{}_{}_{:0>2}h_to_{}_{:0>2}h.pkl'.format(res_freq, inflow_cut.index[0].date(),inflow_cut.index[0].hour, inflow_cut.index[-1].date(),inflow_cut.index[-1].hour))
-                        inflow_cut.to_pickle(path_save+'Inflow_Mast_20Hz_{}_{:0>2}h_to_{}_{:0>2}h.pkl'.format(inflow_cut.index[0].date(),inflow_cut.index[0].hour, inflow_cut.index[-1].date(),inflow_cut.index[-1].hour))
-                        #inflow_nans.to_pickle(path_save+'Inflow_NaNs_{}_{}h_to_{}_{}h.pkl'.format(inflow_cut.index[0].date(),inflow_cut.index[0].hour, inflow_cut.index[-1].date(),inflow_cut.index[-1].hour))
-                    # if len(masts_cut) !=0:  
-                    #     masts_1min_cut.to_pickle(path_save+'Wake_Masts_{}_{}_{}h_to_{}_{}h.pkl'.format(res_freq, masts_cut.index[0].date(),masts_cut.index[0].hour, masts_cut.index[-1].date(),masts_cut.index[-1].hour))
-                    #     masts_cut.to_pickle(path_save+'Wake_Masts_20Hz_{}_{}h_to_{}_{}h.pkl'.format(masts_cut.index[0].date(),masts_cut.index[0].hour, masts_cut.index[-1].date(),masts_cut.index[-1].hour))
-                    #     #masts_nans.to_pickle(path_save+'Masts_NaNs_{}_{}h_to_{}_{}h.pkl'.format(inflow_cut.index[0].date(),inflow_cut.index[0].hour, inflow_cut.index[-1].date(),inflow_cut.index[-1].hour))
+            for column in  inflow.filter(regex='_ax_'):
+                for time, group in inflow_cut.groupby(pd.Grouper(freq='H')):
+                    nans.loc[time, column] = 1 - len(group[column].dropna()) / len(group[column])
+            
+            for column in  masts.filter(regex='_ax_'):
+                for time, group in masts_cut.groupby(pd.Grouper(freq='H')):
+                    nans.loc[time, column] = 1 - len(group[column].dropna()) / len(group[column])
 
-                    print ("ok ...")  
+    
+        
+        
+            ### Plot data            
+            if plot == 1:
+                
+                # Metar data
+                day_after = pd.to_datetime(year + month + day).date()+ pd.to_timedelta(1,"D")
+                met = read_metar(station='TPH', 
+                                   start_year=year, start_month=month, start_day=day, 
+                                   end_year=day_after.year, end_month=day_after.month, end_day=day_after.day)
+            
+                # Timeseries
+                fig = plt.figure(figsize=(15,9))
+                fig.subplots_adjust(right=0.9)
+                plt.suptitle("{}".format(inflow_cut.index[0].date()))
+                ax1 = plt.subplot(3, 1, 2)
+                ax1.set_ylabel('Wind dir ($^\circ$)')
+                for height_col in [col for col in inflow_1min_cut.columns if ('wdir' in col)  & ('_m' not in col) & ('_s' not in col)]:    # loop over every inflow_1min_cut mast height   
+                    ax1.plot(inflow_1min_cut[height_col],'.', label = height_col)
+                for height_col in [col for col in masts_1min_cut.columns if ('wdir' in col)  & ('_m' not in col) & ('_s' not in col)]:    # loop over every wake mast height   
+                    ax1.plot(masts_1min_cut[height_col],'.', label = height_col)
+                plt.plot(met.drct,"o", ms=2, color='black', label = "METAR") 
+                ax1.legend(loc=1, markerscale=3)
+                plt.grid()
+                
+                ax2 = plt.subplot(3, 1, 1, sharex=ax1)
+                plt.ylabel('Wind speed (m s$^{-1}$)')
+                plt.plot(inflow_1min_cut.WS_15m,'.', label = '15m', color="grey")                   
+                for height_col in [col for col in inflow_1min_cut.columns if ('wspd' in col)  & ('_m' not in col) & ('_s' not in col)]:    # loop over every mast height   
+                    ax2.plot(inflow_1min_cut[height_col],'.', label = height_col)
+                for height_col in [col for col in masts_1min_cut.columns if ('wspd' in col)  & ('_m' not in col) & ('_s' not in col)]:    # loop over every wake mast height   
+                    ax2.plot(masts_1min_cut[height_col],'.', label = height_col)
+                plt.plot(met.sknt/1.94384,"o", ms=2, color='black', label = "METAR")  
+                plt.legend(loc=1, markerscale=3)
+                plt.grid()
+                
+                ax3 = plt.subplot(3, 1, 3, sharex=ax1)
+                plt.ylabel('Temp ($^\circ$)', color="C0")
+                plt.plot(inflow_1min_cut.Temp,".",label = 'Temp 2m', color="C0") 
+                try:
+                    plt.plot(inflow_1min_cut.Temp_11m,'.',label = 'Temp 11m', color="lightblue")
+                except:
+                    pass
+                plt.plot((met.tmpf-32)/1.8000,"o", ms=2, color='black', label = "METAR Temp") 
+                ax3.legend(loc=1, markerscale=3).set_zorder(100)
+                ax4 = ax3.twinx()    
+                plt.plot(inflow_1min_cut.RH,'.',label = 'RH', color="C1") 
+               # plt.plot(met.relh,"o", ms=5, color='black', label = "METAR") 
+                plt.ylabel('RH (%)', color="C1")  
+                ax5 = ax3.twinx()
+                ax5.spines.right.set_position(("axes", 1.05))
+                plt.plot(inflow_1min_cut.p,'.', label = 'p', color="C2")  
+                # plt.plot(met.mslp,"o", ms=3, color='black', label = "") # sea level pressure, not actual pressure
+                plt.ylabel('p (hPa)', color="C2")
+                plt.grid()    
+                
+                fig.autofmt_xdate()
+                plt.tight_layout()
+                
+                
+                
+
+
+
+    
+                # Histogram
+                fig2 = plt.figure(figsize=(15,8))
+                plt.suptitle("Histograms {} to {}".format(inflow_cut.index[0].date(), inflow_cut.index[-1].date() ))
+                ax1 = plt.subplot(2, 1, 1)
+                #ax1.set_title("Wind direction histogram {} to {}".format(inflow_cut.index[0].date(), inflow_cut.index[-1].date() ))
+                # for height_col in [col for col in inflow_cut.columns if 'wdir_' in col]:    # loop over every mast height   
+                #     plt.hist(inflow_cut[height_col].dropna(),label = height_col, alpha=0.5, bins=180, density=True) 
+                for height_col in [col for col in masts_cut.columns if 'm1_wdir_' in col]:    # loop over every mast height   
+                    plt.hist(masts_cut[height_col].dropna(),label = height_col, alpha=0.5, bins=180, density=True) 
+                plt.legend()
+                plt.grid()
+                plt.xlabel('Wind dir ($^\circ$)')
+                    
+                ax2 = plt.subplot(2, 1, 2)
+                #ax2.set_title("Wind speed histogram {} to {}".format(inflow_cut.index[0].date(), inflow_cut.index[-1].date() ))
+                # for height_col in [col for col in inflow_cut.columns if 'wspd_' in col]:    # loop over every mast height   
+                #     plt.hist(inflow_cut[height_col].dropna(),label = height_col, alpha=0.5, bins=100, density=True) 
+                for height_col in [col for col in masts_cut.columns if 'm1_wspd_' in col]:    # loop over every mast height   
+                    plt.hist(masts_cut[height_col].dropna(),label = height_col, alpha=0.5, bins=100, density=True) 
+                plt.legend()
+                plt.grid()
+                plt.xlabel('Wind speed (m s$^{-1}$)')
+                plt.tight_layout()
+                
+                
+                # of nans
+                plt.figure(figsize=(12, 6))
+                i = -10
+                for col in nans.columns:
+                    plt.plot(nans.index, nans[col]*100+i,"-", label=col)
+                    i +=1
+                plt.legend()
+                plt.ylabel('Percentage of nans')
+                plt.grid(True)  
+                        
+
+
+            ### Save data files a pickle for faster reading
+            if save == 1:
+                
+                print ("Saving data ...")  
+
+                if plot == 1:
+                    fig.savefig(path_save+'Overview_{}_{:0>2}h_to_{}_{:0>2}h.png'.format(inflow_cut.index[0].date(),inflow_cut.index[0].hour , inflow_cut.index[-1].date(), inflow_cut.index[-1].hour), dpi=200) 
+                    #fig2.savefig(path_save+'Histogram_{}_{}h_to_{}_{}h.png'.format(inflow_cut.index[0].date(),inflow_cut.index[0].hour , inflow_cut.index[-1].date(), inflow_cut.index[-1].hour), dpi=200) 
+                    #fig3.savefig(path_save+'NaNs_{}_{}h_to_{}_{}h.png'.format(inflow_cut.index[0].date(),inflow_cut.index[0].hour , inflow_cut.index[-1].date(), inflow_cut.index[-1].hour), dpi=200)
+                    plt.close('all')
+                
+                if len(inflow_cut) !=0:  
+                    inflow_1min_cut.to_pickle(path_save+'Inflow_Mast_{}_{}_{:0>2}h_to_{}_{:0>2}h.pkl'.format(res_freq, inflow_cut.index[0].date(),inflow_cut.index[0].hour, inflow_cut.index[-1].date(),inflow_cut.index[-1].hour))
+                    inflow_cut.to_pickle(path_save+'Inflow_Mast_20Hz_{}_{:0>2}h_to_{}_{:0>2}h.pkl'.format(inflow_cut.index[0].date(),inflow_cut.index[0].hour, inflow_cut.index[-1].date(),inflow_cut.index[-1].hour))
+                    #inflow_nans.to_pickle(path_save+'Inflow_NaNs_{}_{}h_to_{}_{}h.pkl'.format(inflow_cut.index[0].date(),inflow_cut.index[0].hour, inflow_cut.index[-1].date(),inflow_cut.index[-1].hour))
+                if len(masts_cut) !=0:  
+                    masts_1min_cut.to_pickle(path_save+'Wake_Masts_{}_{}_{}h_to_{}_{:0>2}h.pkl'.format(res_freq, masts_cut.index[0].date(),masts_cut.index[0].hour, masts_cut.index[-1].date(),masts_cut.index[-1].hour))
+                    masts_cut.to_pickle(path_save+'Wake_Masts_20Hz_{}_{}h_to_{}_{:0>2}h.pkl'.format(masts_cut.index[0].date(),masts_cut.index[0].hour, masts_cut.index[-1].date(),masts_cut.index[-1].hour))
+                    #masts_nans.to_pickle(path_save+'Masts_NaNs_{}_{}h_to_{}_{}h.pkl'.format(inflow_cut.index[0].date(),inflow_cut.index[0].hour, inflow_cut.index[-1].date(),inflow_cut.index[-1].hour))
+
+                print ("ok ...")  
     
     
     
             # delete all data before processing next day
-            del inflow,  inflow_cut, inflow_1min_cut,  # masts, masts_1min_cut, masts_cut     
+            del inflow,  inflow_cut, inflow_1min_cut,  masts, masts_1min_cut, masts_cut     
     
     
     
