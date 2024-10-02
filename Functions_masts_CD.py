@@ -28,6 +28,51 @@ def apply_factors_for_w_bug(value):
         return value * 1.166 
     else:
         return value * 1.289
+    
+    
+# Read Metar data from Tonopah station
+def read_metar(station, start_year, start_month, start_day, end_year, end_month, end_day):
+    
+    """
+    use: 
+        
+    met = read_metar(station='TPH', 
+                       start_year=year, start_month=month, start_day=day, 
+                       end_year=day_after.year, end_month=day_after.month, end_day=day_after.day)
+    
+    year, month, date can be either strings or integers
+    """
+        
+    import requests
+    from io import StringIO
+    
+    # API endpoint (https://mesonet.agron.iastate.edu/request/download.phtml?network=NV_ASOS)
+    url = "https://mesonet.agron.iastate.edu/cgi-bin/request/asos.py"
+    params = {
+        'data': 'tmpf,dwpf,relh,drct,sknt,p01i,alti,mslp,vsby,gust,peak_wind_gust,peak_wind_drct,peak_wind_time',
+        'station': station,
+        'tz': 'UTC',
+        'year1': start_year,
+        'month1': start_month,
+        'day1': start_day,
+        'year2': end_year,
+        'month2': end_month,
+        'day2': end_day
+    }
+    
+    # Send a GET request to the API
+    response = requests.get(url, params=params)
+    
+    # Check if the request was successful
+    if response.status_code == 200:
+        # Load the response content into a DataFrame
+        csv_data = StringIO(response.text)
+        metar = pd.read_csv(csv_data, delimiter=',', index_col=1, parse_dates=True, na_values="M")
+    else:
+        metar = pd.DtaFrame()
+        print(f"Failed to retrieve Metar data: {response.status_code}")
+        
+    return metar
 
 
 
