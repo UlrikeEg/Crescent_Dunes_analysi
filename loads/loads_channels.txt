@@ -1,0 +1,1105 @@
+<TdmsGroup with path /'SlowData'>
+<TdmsChannel with path /'SlowData'/'MS Excel Timestamp'>
+  PhysicalLocation:  
+  Indentifier:  
+  Description:  
+  Scale: 0.0
+  Offset: 0.0
+  Units:  
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: MS Excel Timestamp
+<TdmsChannel with path /'SlowData'/'LabVIEW Timestamp'>
+  PhysicalLocation:  
+  Indentifier:  
+  Description:  
+  Scale: 0.0
+  Offset: 0.0
+  Units:  
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: LabVIEW Timestamp
+<TdmsChannel with path /'SlowData'/'Scan Errors'>
+  PhysicalLocation: counts
+  Indentifier: counts
+  Description: counts
+  Scale: 1.0
+  Offset: 0.0
+  Units: counts
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: Scan Errors
+<TdmsChannel with path /'SlowData'/'Late Scans'>
+  PhysicalLocation: counts
+  Indentifier: counts
+  Description: counts
+  Scale: 1.0
+  Offset: 0.0
+  Units: counts
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: Late Scans
+<TdmsChannel with path /'SlowData'/'H3_Support_Frame_Accel_1_X'>
+  PhysicalLocation: Mod:9234_Chassis:0_Slot:1_Channel:0
+  Indentifier: 021A58DF_0
+  Description: Accelerometer 
+  Scale: 2.496878901
+  Offset: -0.033707865
+  Units: g
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H3_Support_Frame_Accel_1_X
+<TdmsChannel with path /'SlowData'/'H3_Support_Frame_Accel_1_Y'>
+  PhysicalLocation: Mod:9234_Chassis:0_Slot:1_Channel:1
+  Indentifier: 021A58DF_1
+  Description: 
+  Scale: 2.5
+  Offset: -0.045
+  Units: g
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H3_Support_Frame_Accel_1_Y
+<TdmsChannel with path /'SlowData'/'H3_Support_Frame_Accel_1_Z'>
+  PhysicalLocation: Mod:9234_Chassis:0_Slot:1_Channel:2
+  Indentifier: 021A58DF_2
+  Description: 
+  Scale: 2.5
+  Offset: -0.0375
+  Units: g
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H3_Support_Frame_Accel_1_Z
+<TdmsChannel with path /'SlowData'/'H3_Support_Frame_Accel_2_X'>
+  PhysicalLocation: Mod:9234_Chassis:0_Slot:1_Channel:3
+  Indentifier: 021A58DF_3
+  Description: Accelerometer 
+  Scale: 2.493765586
+  Offset: -0.007481297
+  Units: g
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H3_Support_Frame_Accel_2_X
+<TdmsChannel with path /'SlowData'/'H3_Support_Frame_Accel_2_Y'>
+  PhysicalLocation: Mod:9234_Chassis:0_Slot:2_Channel:0
+  Indentifier: 021A58D4_0
+  Description: 
+  Scale: 2.493765586
+  Offset: 0.004987531
+  Units: g
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H3_Support_Frame_Accel_2_Y
+<TdmsChannel with path /'SlowData'/'H3_Support_Frame_Accel_2_Z'>
+  PhysicalLocation: Mod:9234_Chassis:0_Slot:2_Channel:1
+  Indentifier: 021A58D4_1
+  Description: 
+  Scale: 2.496878901
+  Offset: -0.018726592
+  Units: g
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H3_Support_Frame_Accel_2_Z
+<TdmsChannel with path /'SlowData'/'H3_Support_Frame_Accel_3_X'>
+  PhysicalLocation: Mod:9234_Chassis:0_Slot:2_Channel:2
+  Indentifier: 021A58D4_2
+  Description: Accelerometer 
+  Scale: 2.493765586
+  Offset: 0.007481297
+  Units: g
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H3_Support_Frame_Accel_3_X
+<TdmsChannel with path /'SlowData'/'H3_Support_Frame_Accel_3_Y'>
+  PhysicalLocation: Mod:9234_Chassis:0_Slot:2_Channel:3
+  Indentifier: 021A58D4_3
+  Description: 
+  Scale: 2.5
+  Offset: 0.015
+  Units: g
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H3_Support_Frame_Accel_3_Y
+<TdmsChannel with path /'SlowData'/'H3_Support_Frame_Accel_3_Z'>
+  PhysicalLocation: Mod:9234_Chassis:0_Slot:3_Channel:0
+  Indentifier: 01D28F2F_0
+  Description: 
+  Scale: 2.5031289
+  Offset: -0.008761
+  Units: g
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H3_Support_Frame_Accel_3_Z
+<TdmsChannel with path /'SlowData'/'H3_Support_Frame_Accel_4_X'>
+  PhysicalLocation: Mod:9234_Chassis:0_Slot:3_Channel:1
+  Indentifier: 01D28F2F_1
+  Description: Accelerometer 
+  Scale: 2.503129
+  Offset: -0.02879
+  Units: g
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H3_Support_Frame_Accel_4_X
+<TdmsChannel with path /'SlowData'/'H3_Support_Frame_Accel_4_Y'>
+  PhysicalLocation: Mod:9234_Chassis:0_Slot:3_Channel:2
+  Indentifier: 01D28F2F_2
+  Description: 
+  Scale: 2.5
+  Offset: -0.0325
+  Units: g
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H3_Support_Frame_Accel_4_Y
+<TdmsChannel with path /'SlowData'/'H3_Support_Frame_Accel_4_Z'>
+  PhysicalLocation: Mod:9234_Chassis:0_Slot:3_Channel:3
+  Indentifier: 01D28F2F_3
+  Description: 
+  Scale: 2.5
+  Offset: -0.0225
+  Units: g
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H3_Support_Frame_Accel_4_Z
+<TdmsChannel with path /'SlowData'/'H3_Mirror_Displacement_Top'>
+  PhysicalLocation: Mod:9239_Chassis:0_Slot:4_Channel:0
+  Indentifier: 01EE2E53_0
+  Description: Laser displacement 
+  Scale: 37.5
+  Offset: -25.0
+  Units: mm
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H3_Mirror_Displacement_Top
+<TdmsChannel with path /'SlowData'/'H3_Mirror_Displacement_Bottom'>
+  PhysicalLocation: Mod:9239_Chassis:0_Slot:4_Channel:1
+  Indentifier: 01EE2E53_1
+  Description: Laser displacement 
+  Scale: 37.5
+  Offset: -25.0
+  Units: mm
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H3_Mirror_Displacement_Bottom
+<TdmsChannel with path /'SlowData'/'H3_Differential_Pressure_1'>
+  PhysicalLocation: Mod:9239_Chassis:0_Slot:4_Channel:2
+  Indentifier: 01EE2E53_2
+  Description: Differential Pressure
+  Scale: 250.0
+  Offset: -1250.0
+  Units: Pa
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H3_Differential_Pressure_1
+<TdmsChannel with path /'SlowData'/'H3_Differential_Pressure_2'>
+  PhysicalLocation: Mod:9239_Chassis:0_Slot:4_Channel:3
+  Indentifier: 01EE2E53_3
+  Description: Differential Pressure
+  Scale: 250.0
+  Offset: -1250.0
+  Units: Pa
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H3_Differential_Pressure_2
+<TdmsChannel with path /'SlowData'/'H3_Differential_Pressure_3'>
+  PhysicalLocation: Mod:9239_Chassis:0_Slot:5_Channel:0
+  Indentifier: 019AD2DB_0
+  Description: Differential Pressure
+  Scale: 250.0
+  Offset: -1250.0
+  Units: Pa
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H3_Differential_Pressure_3
+<TdmsChannel with path /'SlowData'/'H3_Azimuth '>
+  PhysicalLocation: Mod:9239_Chassis:0_Slot:5_Channel:1
+  Indentifier: 019AD2DB_1
+  Description: Watson gyro 
+  Scale: 45.0
+  Offset: -90.0
+  Units: deg TN
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H3_Azimuth 
+<TdmsChannel with path /'SlowData'/'H3_Elevation_Left '>
+  PhysicalLocation: Mod:9239_Chassis:0_Slot:5_Channel:2
+  Indentifier: 019AD2DB_2
+  Description: Inclinometer
+  Scale: 45.0
+  Offset: -270.0
+  Units: deg
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H3_Elevation_Left 
+<TdmsChannel with path /'SlowData'/'H3_Elevation_Right '>
+  PhysicalLocation: Mod:9239_Chassis:0_Slot:5_Channel:3
+  Indentifier: 019AD2DB_3
+  Description: Inclinometer
+  Scale: 45.0
+  Offset: -270.0
+  Units: deg
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H3_Elevation_Right 
+<TdmsChannel with path /'SlowData'/'H3_Pedestal_Bend_1'>
+  PhysicalLocation: Mod:9237_Chassis:0_Slot:7_Channel:0
+  Indentifier: 012AFAB2_0
+  Description: Strain gage
+  Scale: 1.0
+  Offset: 0.0
+  Units: V/V
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H3_Pedestal_Bend_1
+<TdmsChannel with path /'SlowData'/'H3_Pedestal_Bend_2 '>
+  PhysicalLocation: Mod:9237_Chassis:0_Slot:7_Channel:1
+  Indentifier: 012AFAB2_1
+  Description: Strain gage
+  Scale: 1.0
+  Offset: 0.0
+  Units: V/V
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H3_Pedestal_Bend_2 
+<TdmsChannel with path /'SlowData'/'H3_Pedestal_Torque'>
+  PhysicalLocation: Mod:9237_Chassis:0_Slot:7_Channel:2
+  Indentifier: 012AFAB2_2
+  Description: Strain gage
+  Scale: 1.0
+  Offset: 0.0
+  Units: V/V
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H3_Pedestal_Torque
+<TdmsChannel with path /'SlowData'/'H3_Torque_Tube_Left'>
+  PhysicalLocation: Mod:9237_Chassis:0_Slot:7_Channel:3
+  Indentifier: 012AFAB2_3
+  Description: Strain gage
+  Scale: 1.0
+  Offset: 0.0
+  Units: V/V
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H3_Torque_Tube_Left
+<TdmsChannel with path /'SlowData'/'H3_Torque_Tube_Right'>
+  PhysicalLocation: Mod:9237_Chassis:0_Slot:8_Channel:0
+  Indentifier: 021AF20D_0
+  Description: Strain gage
+  Scale: 1.0
+  Offset: 0.0
+  Units: V/V
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H3_Torque_Tube_Right
+<TdmsChannel with path /'SlowData'/'H3_Pedestal_Axial '>
+  PhysicalLocation: Mod:9237_Chassis:0_Slot:8_Channel:1
+  Indentifier: 021AF20D_1
+  Description: Strain gage
+  Scale: 1.0
+  Offset: 0.0
+  Units: V/V
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H3_Pedestal_Axial 
+<TdmsChannel with path /'SlowData'/'H3_Support_Frame_Bending_Top'>
+  PhysicalLocation: Mod:9237_Chassis:0_Slot:8_Channel:2
+  Indentifier: 021AF20D_2
+  Description: Strain gage
+  Scale: 1.0
+  Offset: 0.0
+  Units: V/V
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H3_Support_Frame_Bending_Top
+<TdmsChannel with path /'SlowData'/'H3_Support_Frame_Bending_Bottom'>
+  PhysicalLocation: Mod:9237_Chassis:0_Slot:8_Channel:3
+  Indentifier: 021AF20D_3
+  Description: Strain gage
+  Scale: 1.0
+  Offset: 0.0
+  Units: V/V
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H3_Support_Frame_Bending_Bottom
+<TdmsChannel with path /'SlowData'/'H2_Support_Frame_Accel_1_X'>
+  PhysicalLocation: Mod:9234_Chassis:1_Slot:1_Channel:0
+  Indentifier: 021A58D9_0
+  Description: Accelerometer 
+  Scale: 2.5
+  Offset: -0.035
+  Units: g
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H2_Support_Frame_Accel_1_X
+<TdmsChannel with path /'SlowData'/'H2_Support_Frame_Accel_1_Y'>
+  PhysicalLocation: Mod:9234_Chassis:1_Slot:1_Channel:1
+  Indentifier: 021A58D9_1
+  Description: 
+  Scale: 2.4937
+  Offset: -0.0124688
+  Units: g
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H2_Support_Frame_Accel_1_Y
+<TdmsChannel with path /'SlowData'/'H2_Support_Frame_Accel_1_Z'>
+  PhysicalLocation: Mod:9234_Chassis:1_Slot:1_Channel:2
+  Indentifier: 021A58D9_2
+  Description: 
+  Scale: 2.4937
+  Offset: 0.0074813
+  Units: g
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H2_Support_Frame_Accel_1_Z
+<TdmsChannel with path /'SlowData'/'H2_Support_Frame_Accel_2_X'>
+  PhysicalLocation: Mod:9234_Chassis:1_Slot:1_Channel:3
+  Indentifier: 021A58D9_3
+  Description: Accelerometer 
+  Scale: 2.50313
+  Offset: -0.036295
+  Units: g
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H2_Support_Frame_Accel_2_X
+<TdmsChannel with path /'SlowData'/'H2_Support_Frame_Accel_2_Y'>
+  PhysicalLocation: Mod:9234_Chassis:1_Slot:2_Channel:0
+  Indentifier: 021A58DE_0
+  Description: 
+  Scale: 2.5
+  Offset: -0.02
+  Units: g
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H2_Support_Frame_Accel_2_Y
+<TdmsChannel with path /'SlowData'/'H2_Support_Frame_Accel_2_Z'>
+  PhysicalLocation: Mod:9234_Chassis:1_Slot:2_Channel:1
+  Indentifier: 021A58DE_1
+  Description: 
+  Scale: 2.4937
+  Offset: -0.01995
+  Units: g
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H2_Support_Frame_Accel_2_Z
+<TdmsChannel with path /'SlowData'/'H2_Support_Frame_Accel_3_X'>
+  PhysicalLocation: Mod:9234_Chassis:1_Slot:2_Channel:2
+  Indentifier: 021A58DE_2
+  Description: Accelerometer 
+  Scale: 2.49688
+  Offset: -0.012484
+  Units: g
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H2_Support_Frame_Accel_3_X
+<TdmsChannel with path /'SlowData'/'H2_Support_Frame_Accel_3_Y'>
+  PhysicalLocation: Mod:9234_Chassis:1_Slot:2_Channel:3
+  Indentifier: 021A58DE_3
+  Description: 
+  Scale: 2.49688
+  Offset: -0.0037453
+  Units: g
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H2_Support_Frame_Accel_3_Y
+<TdmsChannel with path /'SlowData'/'H2_Support_Frame_Accel_3_Z'>
+  PhysicalLocation: Mod:9234_Chassis:1_Slot:3_Channel:0
+  Indentifier: 0139A5F4_0
+  Description: 
+  Scale: 2.531289
+  Offset: -0.0162703
+  Units: g
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H2_Support_Frame_Accel_3_Z
+<TdmsChannel with path /'SlowData'/'H2_Support_Frame_Accel_4_X'>
+  PhysicalLocation: Mod:9234_Chassis:1_Slot:3_Channel:1
+  Indentifier: 0139A5F4_1
+  Description: Accelerometer 
+  Scale: 2.50941
+  Offset: -0.0087829
+  Units: g
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H2_Support_Frame_Accel_4_X
+<TdmsChannel with path /'SlowData'/'H2_Support_Frame_Accel_4_Y'>
+  PhysicalLocation: Mod:9234_Chassis:1_Slot:3_Channel:2
+  Indentifier: 0139A5F4_2
+  Description: 
+  Scale: 2.50941
+  Offset: -0.023894
+  Units: g
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H2_Support_Frame_Accel_4_Y
+<TdmsChannel with path /'SlowData'/'H2_Support_Frame_Accel_4_Z'>
+  PhysicalLocation: Mod:9234_Chassis:1_Slot:3_Channel:3
+  Indentifier: 0139A5F4_3
+  Description: 
+  Scale: 2.51256
+  Offset: 0.0050251
+  Units: g
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H2_Support_Frame_Accel_4_Z
+<TdmsChannel with path /'SlowData'/'H2_Mirror_Displacement_Top'>
+  PhysicalLocation: Mod:9239_Chassis:1_Slot:4_Channel:0
+  Indentifier: 01E96D23_0
+  Description: Laser displacement 
+  Scale: 37.5
+  Offset: -25.0
+  Units: mm
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H2_Mirror_Displacement_Top
+<TdmsChannel with path /'SlowData'/'H2_Mirror_Displacement_Bottom'>
+  PhysicalLocation: Mod:9239_Chassis:1_Slot:4_Channel:1
+  Indentifier: 01E96D23_1
+  Description: Laser displacement 
+  Scale: 37.5
+  Offset: -25.0
+  Units: mm
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H2_Mirror_Displacement_Bottom
+<TdmsChannel with path /'SlowData'/'H2_Differential_Pressure_1'>
+  PhysicalLocation: Mod:9239_Chassis:1_Slot:4_Channel:2
+  Indentifier: 01E96D23_2
+  Description: Differential Pressure
+  Scale: 250.0
+  Offset: -1250.0
+  Units: Pa
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H2_Differential_Pressure_1
+<TdmsChannel with path /'SlowData'/'H2_Differential_Pressure_2'>
+  PhysicalLocation: Mod:9239_Chassis:1_Slot:4_Channel:3
+  Indentifier: 01E96D23_3
+  Description: Differential Pressure
+  Scale: 250.0
+  Offset: -1250.0
+  Units: Pa
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H2_Differential_Pressure_2
+<TdmsChannel with path /'SlowData'/'H2_Differential_Pressure_3'>
+  PhysicalLocation: Mod:9239_Chassis:1_Slot:5_Channel:0
+  Indentifier: 021A148A_0
+  Description: Differential Pressure
+  Scale: 250.0
+  Offset: -1250.0
+  Units: Pa
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H2_Differential_Pressure_3
+<TdmsChannel with path /'SlowData'/'H2_Azimuth'>
+  PhysicalLocation: Mod:9239_Chassis:1_Slot:5_Channel:1
+  Indentifier: 021A148A_1
+  Description: Watson gyro 
+  Scale: 45.0
+  Offset: -90.0
+  Units: deg TN
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H2_Azimuth
+<TdmsChannel with path /'SlowData'/'H2_Elevation_Left '>
+  PhysicalLocation: Mod:9239_Chassis:1_Slot:5_Channel:2
+  Indentifier: 021A148A_2
+  Description: Inclinometer
+  Scale: 45.0
+  Offset: -270.0
+  Units: deg
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H2_Elevation_Left 
+<TdmsChannel with path /'SlowData'/'H2_Elevation_Right '>
+  PhysicalLocation: Mod:9239_Chassis:1_Slot:5_Channel:3
+  Indentifier: 021A148A_3
+  Description: Inclinometer
+  Scale: 45.0
+  Offset: -270.0
+  Units: deg
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H2_Elevation_Right 
+<TdmsChannel with path /'SlowData'/'H2_Pedestal_Bend_1'>
+  PhysicalLocation: Mod:9237_Chassis:1_Slot:7_Channel:0
+  Indentifier: 02012031_0
+  Description: Strain gage
+  Scale: 1.0
+  Offset: 0.0
+  Units: V/V
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H2_Pedestal_Bend_1
+<TdmsChannel with path /'SlowData'/'H2_Pedestal_Bend_2 '>
+  PhysicalLocation: Mod:9237_Chassis:1_Slot:7_Channel:1
+  Indentifier: 02012031_1
+  Description: Strain gage
+  Scale: 1.0
+  Offset: 0.0
+  Units: V/V
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H2_Pedestal_Bend_2 
+<TdmsChannel with path /'SlowData'/'H2_Pedestal_Torque'>
+  PhysicalLocation: Mod:9237_Chassis:1_Slot:7_Channel:2
+  Indentifier: 02012031_2
+  Description: Strain gage
+  Scale: 1.0
+  Offset: 0.0
+  Units: V/V
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H2_Pedestal_Torque
+<TdmsChannel with path /'SlowData'/'H2_Torque_Tube_Left'>
+  PhysicalLocation: Mod:9237_Chassis:1_Slot:7_Channel:3
+  Indentifier: 02012031_3
+  Description: Strain gage
+  Scale: 1.0
+  Offset: 0.0
+  Units: V/V
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H2_Torque_Tube_Left
+<TdmsChannel with path /'SlowData'/'H2_Torque_Tube_Right'>
+  PhysicalLocation: Mod:9237_Chassis:1_Slot:8_Channel:0
+  Indentifier: 0214DE1F_0
+  Description: Strain gage
+  Scale: 1.0
+  Offset: 0.0
+  Units: V/V
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H2_Torque_Tube_Right
+<TdmsChannel with path /'SlowData'/'H2_Pedestal_Axial '>
+  PhysicalLocation: Mod:9237_Chassis:1_Slot:8_Channel:1
+  Indentifier: 0214DE1F_1
+  Description: Strain gage
+  Scale: 1.0
+  Offset: 0.0
+  Units: V/V
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H2_Pedestal_Axial 
+<TdmsChannel with path /'SlowData'/'H2_Support_Frame_Bending_Top'>
+  PhysicalLocation: Mod:9237_Chassis:1_Slot:8_Channel:2
+  Indentifier: 0214DE1F_2
+  Description: Strain gage
+  Scale: 1.0
+  Offset: 0.0
+  Units: V/V
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H2_Support_Frame_Bending_Top
+<TdmsChannel with path /'SlowData'/'H2_Support_Frame_Bending_Bottom'>
+  PhysicalLocation: Mod:9237_Chassis:1_Slot:8_Channel:3
+  Indentifier: 0214DE1F_3
+  Description: Strain gage
+  Scale: 1.0
+  Offset: 0.0
+  Units: V/V
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H2_Support_Frame_Bending_Bottom
+<TdmsChannel with path /'SlowData'/'H1_Support_Frame_Accel_1_X'>
+  PhysicalLocation: Mod:9234_Chassis:2_Slot:1_Channel:0
+  Indentifier: 021A5856_0
+  Description: Accelerometer 
+  Scale: 2.49375
+  Offset: -0.099751
+  Units: g
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H1_Support_Frame_Accel_1_X
+<TdmsChannel with path /'SlowData'/'H1_Support_Frame_Accel_1_Y'>
+  PhysicalLocation: Mod:9234_Chassis:2_Slot:1_Channel:1
+  Indentifier: 021A5856_1
+  Description: 
+  Scale: 2.496878
+  Offset: -0.0137328
+  Units: g
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H1_Support_Frame_Accel_1_Y
+<TdmsChannel with path /'SlowData'/'H1_Support_Frame_Accel_1_Z'>
+  PhysicalLocation: Mod:9234_Chassis:2_Slot:1_Channel:2
+  Indentifier: 021A5856_2
+  Description: 
+  Scale: 2.49687
+  Offset: -0.0137328
+  Units: g
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H1_Support_Frame_Accel_1_Z
+<TdmsChannel with path /'SlowData'/'H1_Support_Frame_Accel_2_X'>
+  PhysicalLocation: Mod:9234_Chassis:2_Slot:1_Channel:3
+  Indentifier: 021A5856_3
+  Description: Accelerometer 
+  Scale: 2.5
+  Offset: -0.0275
+  Units: g
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H1_Support_Frame_Accel_2_X
+<TdmsChannel with path /'SlowData'/'H1_Support_Frame_Accel_2_Y'>
+  PhysicalLocation: Mod:9234_Chassis:2_Slot:2_Channel:0
+  Indentifier: 01D9DA90_0
+  Description: 
+  Scale: 2.49687
+  Offset: -0.03121
+  Units: g
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H1_Support_Frame_Accel_2_Y
+<TdmsChannel with path /'SlowData'/'H1_Support_Frame_Accel_2_Z'>
+  PhysicalLocation: Mod:9234_Chassis:2_Slot:2_Channel:1
+  Indentifier: 01D9DA90_1
+  Description: 
+  Scale: 2.5
+  Offset: 0.0
+  Units: g
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H1_Support_Frame_Accel_2_Z
+<TdmsChannel with path /'SlowData'/'H1_Support_Frame_Accel_3_X'>
+  PhysicalLocation: Mod:9234_Chassis:2_Slot:2_Channel:2
+  Indentifier: 01D9DA90_2
+  Description: Accelerometer 
+  Scale: 2.5
+  Offset: -0.005
+  Units: g
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H1_Support_Frame_Accel_3_X
+<TdmsChannel with path /'SlowData'/'H1_Support_Frame_Accel_3_Y'>
+  PhysicalLocation: Mod:9234_Chassis:2_Slot:2_Channel:3
+  Indentifier: 01D9DA90_3
+  Description: 
+  Scale: 2.5
+  Offset: -0.025
+  Units: g
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H1_Support_Frame_Accel_3_Y
+<TdmsChannel with path /'SlowData'/'H1_Support_Frame_Accel_3_Z'>
+  PhysicalLocation: Mod:9234_Chassis:2_Slot:3_Channel:0
+  Indentifier: 021A58E0_0
+  Description: 
+  Scale: 2.5
+  Offset: -0.02
+  Units: g
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H1_Support_Frame_Accel_3_Z
+<TdmsChannel with path /'SlowData'/'H1_Support_Frame_Accel_4_X'>
+  PhysicalLocation: Mod:9234_Chassis:2_Slot:3_Channel:1
+  Indentifier: 021A58E0_1
+  Description: Accelerometer 
+  Scale: 2.503128911
+  Offset: 0.016270338
+  Units: g
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H1_Support_Frame_Accel_4_X
+<TdmsChannel with path /'SlowData'/'H1_Support_Frame_Accel_4_Y'>
+  PhysicalLocation: Mod:9234_Chassis:2_Slot:3_Channel:2
+  Indentifier: 021A58E0_2
+  Description: 
+  Scale: 2.506265664
+  Offset: 0.01
+  Units: g
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H1_Support_Frame_Accel_4_Y
+<TdmsChannel with path /'SlowData'/'H1_Support_Frame_Accel_4_Z'>
+  PhysicalLocation: Mod:9234_Chassis:2_Slot:3_Channel:3
+  Indentifier: 021A58E0_3
+  Description: 
+  Scale: 2.509410289
+  Offset: 0.001254705
+  Units: g
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H1_Support_Frame_Accel_4_Z
+<TdmsChannel with path /'SlowData'/'H1_Mirror_Displacement_Top'>
+  PhysicalLocation: Mod:9239_Chassis:2_Slot:4_Channel:0
+  Indentifier: 01552CDF_0
+  Description: Laser displacement 
+  Scale: 37.5
+  Offset: -25.0
+  Units: mm
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H1_Mirror_Displacement_Top
+<TdmsChannel with path /'SlowData'/'H1_Mirror_Displacement_Bottom'>
+  PhysicalLocation: Mod:9239_Chassis:2_Slot:4_Channel:1
+  Indentifier: 01552CDF_1
+  Description: Laser displacement 
+  Scale: 37.5
+  Offset: -25.0
+  Units: mm
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H1_Mirror_Displacement_Bottom
+<TdmsChannel with path /'SlowData'/'H1_Differential_Pressure_1'>
+  PhysicalLocation: Mod:9239_Chassis:2_Slot:4_Channel:2
+  Indentifier: 01552CDF_2
+  Description: Differential Pressure
+  Scale: 250.0
+  Offset: -1250.0
+  Units: Pa
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H1_Differential_Pressure_1
+<TdmsChannel with path /'SlowData'/'H1_Differential_Pressure_2'>
+  PhysicalLocation: Mod:9239_Chassis:2_Slot:4_Channel:3
+  Indentifier: 01552CDF_3
+  Description: Differential Pressure
+  Scale: 250.0
+  Offset: -1250.0
+  Units: Pa
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H1_Differential_Pressure_2
+<TdmsChannel with path /'SlowData'/'H1_Differential_Pressure_3'>
+  PhysicalLocation: Mod:9239_Chassis:2_Slot:5_Channel:0
+  Indentifier: 021A13FE_0
+  Description: Differential Pressure
+  Scale: 250.0
+  Offset: -1250.0
+  Units: Pa
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H1_Differential_Pressure_3
+<TdmsChannel with path /'SlowData'/'H1_Azimuth'>
+  PhysicalLocation: Mod:9239_Chassis:2_Slot:5_Channel:1
+  Indentifier: 021A13FE_1
+  Description: Watson gyro 
+  Scale: 45.0
+  Offset: -90.0
+  Units: deg TN
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H1_Azimuth
+<TdmsChannel with path /'SlowData'/'H1_Elevation_Left '>
+  PhysicalLocation: Mod:9239_Chassis:2_Slot:5_Channel:2
+  Indentifier: 021A13FE_2
+  Description: Inclinometer
+  Scale: 45.0
+  Offset: -270.0
+  Units: deg
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H1_Elevation_Left 
+<TdmsChannel with path /'SlowData'/'H1_Elevation_Right '>
+  PhysicalLocation: Mod:9239_Chassis:2_Slot:5_Channel:3
+  Indentifier: 021A13FE_3
+  Description: Inclinometer
+  Scale: 45.0
+  Offset: -270.0
+  Units: deg
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H1_Elevation_Right 
+<TdmsChannel with path /'SlowData'/'H1_Wind Direction '>
+  PhysicalLocation: Mod:9239_Chassis:2_Slot:6_Channel:0
+  Indentifier: 021A89C3_0
+  Description: 3D sonic anno
+  Scale: 44.9875
+  Offset: -89.975
+  Units: deg TN
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H1_Wind Direction 
+<TdmsChannel with path /'SlowData'/'H1_Wind Speed W '>
+  PhysicalLocation: Mod:9239_Chassis:2_Slot:6_Channel:1
+  Indentifier: 021A89C3_1
+  Description: 3D sonic anno
+  Scale: 1.25
+  Offset: -7.5
+  Units: m/s
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H1_Wind Speed W 
+<TdmsChannel with path /'SlowData'/'H1_Wind Speed V'>
+  PhysicalLocation: Mod:9239_Chassis:2_Slot:6_Channel:2
+  Indentifier: 021A89C3_2
+  Description: 3D sonic anno
+  Scale: 12.5
+  Offset: -75.0
+  Units: m/s
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H1_Wind Speed V
+<TdmsChannel with path /'SlowData'/'H1_Wind Speed U'>
+  PhysicalLocation: Mod:9239_Chassis:2_Slot:6_Channel:3
+  Indentifier: 021A89C3_3
+  Description: 3D sonic anno
+  Scale: 12.5
+  Offset: -75.0
+  Units: m/s
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H1_Wind Speed U
+<TdmsChannel with path /'SlowData'/'H1_Pedestal_Bend_1'>
+  PhysicalLocation: Mod:9237_Chassis:2_Slot:7_Channel:0
+  Indentifier: 0214DE16_0
+  Description: Strain gage
+  Scale: 1.0
+  Offset: 0.0
+  Units: V/V
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H1_Pedestal_Bend_1
+<TdmsChannel with path /'SlowData'/'H1_Pedestal_Bend_2 '>
+  PhysicalLocation: Mod:9237_Chassis:2_Slot:7_Channel:1
+  Indentifier: 0214DE16_1
+  Description: Strain gage
+  Scale: 1.0
+  Offset: 0.0
+  Units: V/V
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H1_Pedestal_Bend_2 
+<TdmsChannel with path /'SlowData'/'H1_Pedestal_Torque'>
+  PhysicalLocation: Mod:9237_Chassis:2_Slot:7_Channel:2
+  Indentifier: 0214DE16_2
+  Description: Strain gage
+  Scale: 1.0
+  Offset: 0.0
+  Units: V/V
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H1_Pedestal_Torque
+<TdmsChannel with path /'SlowData'/'H1_Torque_Tube_Left'>
+  PhysicalLocation: Mod:9237_Chassis:2_Slot:7_Channel:3
+  Indentifier: 0214DE16_3
+  Description: Strain gage
+  Scale: 1.0
+  Offset: 0.0
+  Units: V/V
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H1_Torque_Tube_Left
+<TdmsChannel with path /'SlowData'/'H1_Torque_Tube_Right'>
+  PhysicalLocation: Mod:9237_Chassis:2_Slot:8_Channel:0
+  Indentifier: 01FF5E4F_0
+  Description: Strain gage
+  Scale: 1.0
+  Offset: 0.0
+  Units: V/V
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H1_Torque_Tube_Right
+<TdmsChannel with path /'SlowData'/'H1_Pedestal_Axial '>
+  PhysicalLocation: Mod:9237_Chassis:2_Slot:8_Channel:1
+  Indentifier: 01FF5E4F_1
+  Description: Strain gage
+  Scale: 1.0
+  Offset: 0.0
+  Units: V/V
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H1_Pedestal_Axial 
+<TdmsChannel with path /'SlowData'/'H1_Support_Frame_Bending_Top'>
+  PhysicalLocation: Mod:9237_Chassis:2_Slot:8_Channel:2
+  Indentifier: 01FF5E4F_2
+  Description: Strain gage
+  Scale: 1.0
+  Offset: 0.0
+  Units: V/V
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H1_Support_Frame_Bending_Top
+<TdmsChannel with path /'SlowData'/'H1_Support_Frame_Bending_Bottom'>
+  PhysicalLocation: Mod:9237_Chassis:2_Slot:8_Channel:3
+  Indentifier: 01FF5E4F_3
+  Description: Strain gage
+  Scale: 1.0
+  Offset: 0.0
+  Units: V/V
+  wf_start_time: 2024-03-13T15:29:06.500000
+  wf_start_offset: 0.0
+  wf_increment: 1.0
+  wf_samples: 1
+  NI_ChannelName: H1_Support_Frame_Bending_Bottom
