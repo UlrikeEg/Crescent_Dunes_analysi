@@ -172,10 +172,11 @@ def calc_wind(data):
     - adds wind direction and horizontal wind
     '''
 
-    ## loop over every mast height for calculating wind direction and speed
+    ## loop over every sonic for calculating wind direction and speed
     
-    for height_col in [col for col in data.columns if 'U_ax_' in col]:    # loop over every mast height
+    for height_col in [col for col in data.columns if 'U_ax_' in col]:    # loop over every sonic
         
+        # column names
         U = height_col
         V = height_col.replace("U_ax", "V_ax")
         col_dir = height_col.replace("U_ax", "wdir")
@@ -184,7 +185,7 @@ def calc_wind(data):
         # calculate wind direction and horizontal wind       
         data[col_dir] = np.degrees(np.arctan2( - data[V], data[U])) # this is the direction of the wind speed vector
         data[col_dir] = data[col_dir] + 180 # wind direction is 180 deg offset from wind vector
-        data[col_spd] = np.sqrt(data[U]**2 + data[V]**2)    
+        data[col_spd] = np.sqrt(data[U]**2 + data[V]**2)    # wind speed
         
     return data
 
